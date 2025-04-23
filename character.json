@@ -1,0 +1,42 @@
+{
+    "body": {
+        "shape": "Robot",
+        "height": "tall",
+        "limbs": "heavy black armor",
+        "head_ratio": "fierce expression"
+    },
+    "facial_features": {
+        "eyes": "glowing red",
+        "eyebrows": "",
+        "nose": "",
+        "mouth": "",
+        "ears": ""
+    },
+    "hair": {
+        "style": "long flowing silver",
+        "color": "silver",
+        "head_accessories": ""
+    },
+    "clothing": {
+        "upper_wear": "heavy black armor",
+        "lower_wear": "heavy black armor",
+        "footwear": "crimson cape",
+        "handwear": "",
+        "accessories": [
+            ""
+        ]
+    },
+    "special_features": {
+        "skin_texture": "",
+        "skin_color": "",
+        "tattoos_markings": "",
+        "extra_limbs": "",
+        "wings": "",
+        "tail": ""
+    },
+    "pose_personality": {
+        "pose": "stands tall",
+        "expression": "fierce",
+        "personality": "power"
+    }
+}
