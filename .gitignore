@@ -11,3 +11,5 @@ trained_model/
 images-old/
 my_character
 Characters
+003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth
+RealESRGAN_x4plus_anime_6B.pth
