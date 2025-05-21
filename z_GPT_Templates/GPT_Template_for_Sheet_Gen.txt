@@ -1,0 +1,8 @@
+Make me a character sheet for given the following description.
+
+{Char_Description}
+
+----
+The image needs to be appropriate for a children's story book illustration
+
+I am giving you a 3:2 aspect ratio sheet with 6 sections divided equally. I want you to give me a 3:2 aspect ration character sheet with each of the 6 areas inside filled in. I want you to draw on top of the image I give you and draw within the 6 areas.
