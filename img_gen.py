@@ -17,7 +17,7 @@ def generate_sdxl_image(prompt, filename="storybook_character.png"):
     Generates an image using Stable Diffusion XL (SDXL) from the given prompt.
     """
     # Define negative prompts to avoid unwanted styles
-    negative_prompt = "realistic, photo, 3D, horror, dark lighting, detailed, complex, photorealistic, hyperrealistic, cinematic, dramatic lighting"
+    negative_prompt = "realistic, photo, 3D, horror, detailed, complex, photorealistic, hyperrealistic, cinematic, dramatic lighting"
     
     image = pipe(
         prompt,
