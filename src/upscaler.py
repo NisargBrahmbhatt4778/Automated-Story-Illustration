@@ -20,7 +20,7 @@ def setup_upscaler():
         RealESRGANer: Configured upscaler instance
     """
     model = RRDBNet(num_in_ch=3, num_out_ch=3, num_feat=64, num_block=6, num_grow_ch=32, scale=4)
-    model_path = str(Path('RealESRGAN_x4plus_anime_6B.pth'))
+    model_path = str(Path('models/RealESRGAN_x4plus_anime_6B.pth'))
 
     device = torch.device('mps' if torch.backends.mps.is_available() else 'cpu')
     
