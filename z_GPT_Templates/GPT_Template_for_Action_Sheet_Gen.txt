@@ -1,1 +1,4 @@
-Now make me an action sheet for this character, showing 6 different actions this character can do by drawing on top of the image I give you and draw within the 6 areas
+Now make me an action sheet for this character, showing 6 different actions they can do.
+Please draw directly on top of the attached 3:2 template, which is divided into 6 equal sections (3 columns × 2 rows).
+Each section should show the character performing a unique action. Keep the drawings framed inside each box, and maintain the same style and proportions as in the character sheet.
+Please return a landscape 3:2 aspect ratio image as output

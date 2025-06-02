@@ -1,1 +1,13 @@
-Now make me an emotion sheet for this character, showing 9 different emotions this character can do by drawing on top of the image I give you and draw within the 9 areas
+Now create an emotion sheet for the character we've been working with.
+
+You will receive a 1:1 aspect ratio (1024×1024 px) grid image, divided into 9 equal squares (arranged in 3 columns and 3 rows).
+
+Your task is to draw directly on top of this image, placing the character in each square and illustrating 9 distinct emotions.
+
+Please return a square 1:1 aspect ratio image as output
+
+Please follow these instructions:
+ - Each square should show a different facial expression or emotional state (e.g., happy, sad, angry, scared, excited, calm, surprised, tired, confused).
+ - Draw within the boundaries of each square, keeping each emotion framed clearly.
+ - Maintain consistent proportions and style with the previous character and action sheets.
+ - If needed, slightly zoom out to ensure the character fits entirely within each square without overlapping into neighbouring sections.

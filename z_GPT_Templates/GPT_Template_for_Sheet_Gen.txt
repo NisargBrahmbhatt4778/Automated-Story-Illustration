@@ -1,8 +1,13 @@
-Make me a character sheet for given the following description.
+Please generate a character sheet illustration based on the following character description:
 
 {Char_Description}
 
-----
-The image needs to be appropriate for a children's story book illustration
-
-I am giving you a 3:2 aspect ratio sheet with 6 sections divided equally. I want you to give me a 3:2 aspect ration character sheet with each of the 6 areas inside filled in. I want you to draw on top of the image I give you and draw within the 6 areas.
+This image must be styled as a children’s storybook illustration.
+You will receive a blank template image (3:2 aspect ratio) that is divided into 6 equal rectangular sections, arranged in 3 columns and 2 rows.
+Your task is to draw directly on top of this template, ensuring that each of the 6 segments is individually filled with a unique illustration of the character.
+Use the 6 sections to show distinct poses or outfits to convey the character’s personality or design variations.
+Please return a landscape 3:2 aspect ratio image as output
+Make sure:
+ - You draw inside the boundaries of each section, not across them.
+ - The character proportions stay consistent between sections.
+ - The drawing remains centred and well-framed within each segment.

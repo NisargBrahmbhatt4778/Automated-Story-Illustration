@@ -1,0 +1,24 @@
+Make me a combined character, action, and emotion sheet for the following description:
+{Char_Description}
+
+-----
+The image needs to be appropriate for a children's storybook illustration.
+
+I am providing you with a reference image that is divided into 3 rows and 7 columns, making 21 equally sized sections.
+
+Please follow this layout precisely:
+ - Top Row (Sections 1–7): Character Sheet — show the character in 7 different poses or outfits to give a sense of personality and design variations.
+ - Middle Row (Sections 8–14): Action Sheet — illustrate the character performing 7 different actions that reflect their role, abilities, or personality.
+ - Bottom Row (Sections 15–21): Emotion Sheet — depict 7 distinct facial expressions/emotions of the character (e.g., happy, sad, angry, surprised, scared, calm, excited).
+
+Ensure that all drawings are done within the designated areas of the 7×3 grid I am providing, and that the character proportions remain consistent across all 21 segments.
+
+The overall aspect ratio is 3:2 (landscape), and the visuals should fit neatly within each section of the grid.
+
+You are drawing on top of the "grid_with_21_sections.png" file I will provide. Make sure the illustrations fit cleanly within each square and stay aligned to the borders.
+
+⚠️ Do NOT draw or alter the black lines or grid layout. You must draw strictly inside the white boxes only. The lines are used in post-processing to automatically split the sheet, so they must remain unaltered and perfectly aligned.
+
+Slightly zoom out if necessary to keep proportions balanced within the frame.
+
+Keep the overall tone vibrant and storybook-friendly.
