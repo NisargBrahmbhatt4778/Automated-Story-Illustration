@@ -13,3 +13,16 @@ my_character
 Characters
 003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth
 RealESRGAN_x4plus_anime_6B.pth
+.env
+output_cells_improved/
+output_cells_tuned_v1/
+output_cells_tuned_v2/
+output_cells_tuned_v3/
+output_cells_tuned_v4/
+output_cells_advanced_20250530_164948/
+output_cells_final/
+z_char_sheet_gen_test/
+credentials.json
+
+z_GPT_Templates/pose_sheet.png
+generation_history.db
