@@ -9,7 +9,7 @@ from pathlib import Path
 # Add the parent directory to the Python path so we can import our modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.image_processor import process_character_images
+from src.cut_an_image import process_character_images
 
 def test_image_cutting():
     """
