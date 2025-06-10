@@ -105,12 +105,24 @@ def train_sdxl_model(character_name, training_images_dir, character_description)
         
         if training.status == "succeeded":
             print("Training completed successfully!")
-            print(f"Model ID: {training.output}")
+            print(f"Training output: {training.output}")
+            
+            # Extract the version string from training.output
+            if isinstance(training.output, dict) and 'version' in training.output:
+                model_version = training.output['version']
+            else:
+                # Fallback: if training.output is already a string, use it directly
+                model_version = str(training.output)
+            
+            print(f"Model version: {model_version}")
             
             # Save the model information
             model_info = {
                 "character_name": character_name,
-                "model_id": training.output,
+                "model_id": {
+                    "version": model_version,
+                    "weights": training.output.get('weights') if isinstance(training.output, dict) else None
+                },
                 "training_description": character_description,
                 "trained_at": time.strftime("%Y-%m-%d %H:%M:%S"),
                 "destination_model": destination_model,
@@ -121,7 +133,7 @@ def train_sdxl_model(character_name, training_images_dir, character_description)
             with open(info_path, 'w') as f:
                 json.dump(model_info, f, indent=2)
             
-            return training.output
+            return model_version
         else:
             print(f"Training failed with status: {training.status}")
             return None
