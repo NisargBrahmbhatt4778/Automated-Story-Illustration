@@ -258,15 +258,16 @@ def simple_grid_fallback(image_path, output_dir, sheet_type="character", logger=
             logger.error(f"Simple fallback failed: {str(e)}")
         return 0
 
-def advanced_grid_detection(image_path, output_dir="output_cells_advanced", sheet_type="character", logger=None):
+def advanced_grid_detection(image_path, output_dir="output_cells_advanced", sheet_type="character", logger=None, debug_dir="debug_output"):
     """
     Advanced grid detection and cutting using computer vision techniques.
     
     Args:
         image_path (str): Path to the input image
-        output_dir (str): Directory to save cut cells and debug images
+        output_dir (str): Directory to save cut cells
         sheet_type (str): Type of sheet ("character", "action", "emotion")
         logger (logging.Logger): Logger instance for output
+        debug_dir (str): Directory to save debug images (if None, uses output_dir)
     
     Returns:
         int: Number of cells successfully extracted
@@ -274,9 +275,16 @@ def advanced_grid_detection(image_path, output_dir="output_cells_advanced", shee
     if logger is None:
         logger = setup_logging(output_dir)
     
+    # Set debug directory - use separate debug dir if provided, otherwise use output_dir
+    if debug_dir is None:
+        debug_dir = output_dir
+    else:
+        os.makedirs(debug_dir, exist_ok=True)
+    
     logger.info(f"Starting advanced grid detection for {sheet_type} sheet")
     logger.info(f"Input image: {image_path}")
     logger.info(f"Output directory: {output_dir}")
+    logger.info(f"Debug directory: {debug_dir}")
     
     # Create output directory
     os.makedirs(output_dir, exist_ok=True)
@@ -312,12 +320,12 @@ def advanced_grid_detection(image_path, output_dir="output_cells_advanced", shee
         blurred_image, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, 
         cv2.THRESH_BINARY_INV, params["adaptive_thresh_block_size"], params["adaptive_thresh_C"]
     )
-    cv2.imwrite(os.path.join(output_dir, f"debug_adaptive_thresh_{sheet_type}.png"), adaptive_th_image)
+    cv2.imwrite(os.path.join(debug_dir, f"debug_adaptive_thresh_{sheet_type}.png"), adaptive_th_image)
 
     # Step 3: Edge detection
     logger.info("Performing Canny edge detection...")
     edges = cv2.Canny(adaptive_th_image, params["canny_low_thresh"], params["canny_high_thresh"])
-    cv2.imwrite(os.path.join(output_dir, f"debug_edges_{sheet_type}.png"), edges)
+    cv2.imwrite(os.path.join(debug_dir, f"debug_edges_{sheet_type}.png"), edges)
 
     # Step 4: Line detection using Hough transform
     logger.info("Detecting lines with Hough transform...")
@@ -357,7 +365,7 @@ def advanced_grid_detection(image_path, output_dir="output_cells_advanced", shee
         elif abs(angle_rad - np.pi/2) < max_angle_dev_rad:
             vertical_coords.append((x1 + x2) / 2)
             
-    cv2.imwrite(os.path.join(output_dir, f"debug_detected_lines_{sheet_type}.png"), debug_image_lines)
+    cv2.imwrite(os.path.join(debug_dir, f"debug_detected_lines_{sheet_type}.png"), debug_image_lines)
 
     logger.info(f"Raw horizontal line candidates: {len(horizontal_coords)}")
     logger.info(f"Raw vertical line candidates: {len(vertical_coords)}")
@@ -379,7 +387,7 @@ def advanced_grid_detection(image_path, output_dir="output_cells_advanced", shee
         cv2.line(debug_processed_lines_image, (0, int(y_coord)), (img_width, int(y_coord)), (0, 255, 255), 3)
     for x_coord in processed_vert_lines:
         cv2.line(debug_processed_lines_image, (int(x_coord), 0), (int(x_coord), img_height), (255, 0, 255), 3)
-    cv2.imwrite(os.path.join(output_dir, f"debug_processed_lines_{sheet_type}.png"), debug_processed_lines_image)
+    cv2.imwrite(os.path.join(debug_dir, f"debug_processed_lines_{sheet_type}.png"), debug_processed_lines_image)
 
 
     # Step 7: Extract cells from detected grid
@@ -440,8 +448,9 @@ def cut_character_sheet(image_path, output_dir, character_name=None):
     Returns:
         int: Number of cells extracted
     """
-    debug_dir = os.path.join(output_dir, "debug_character")
-    return advanced_grid_detection(str(image_path), debug_dir, "character")
+    # Create main debug directory in the output folder
+    debug_dir = os.path.join(output_dir, "debug")
+    return advanced_grid_detection(str(image_path), output_dir, "character", debug_dir=debug_dir)
 
 def cut_action_sheet(image_path, output_dir, character_name=None):
     """
@@ -455,8 +464,9 @@ def cut_action_sheet(image_path, output_dir, character_name=None):
     Returns:
         int: Number of cells extracted
     """
-    debug_dir = os.path.join(output_dir, "debug_action")
-    return advanced_grid_detection(str(image_path), debug_dir, "action")
+    # Create main debug directory in the output folder
+    debug_dir = os.path.join(output_dir, "debug")
+    return advanced_grid_detection(str(image_path), output_dir, "action", debug_dir=debug_dir)
 
 def cut_emotion_sheet(image_path, output_dir, character_name=None):
     """
@@ -470,8 +480,9 @@ def cut_emotion_sheet(image_path, output_dir, character_name=None):
     Returns:
         int: Number of cells extracted
     """
-    debug_dir = os.path.join(output_dir, "debug_emotion")
-    return advanced_grid_detection(str(image_path), debug_dir, "emotion")
+    # Create main debug directory in the output folder
+    debug_dir = os.path.join(output_dir, "debug")
+    return advanced_grid_detection(str(image_path), output_dir, "emotion", debug_dir=debug_dir)
 
 def process_character_images(character_name, uncut_dir):
     """
