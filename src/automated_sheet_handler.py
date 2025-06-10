@@ -66,7 +66,7 @@ def handle_character_sheets(character_name, character_description):
     # Initialize OpenAI client
     try:
         client = OpenAI(api_key=api_key)
-        pipeline_logger.log_info("  ✓ OpenAI client initialized successfully")
+        pipeline_logger.log_info(" OpenAI client initialized successfully")
     except Exception as e:
         pipeline_logger.log_error(f"Failed to initialize OpenAI client: {str(e)}")
         return None
@@ -76,7 +76,7 @@ def handle_character_sheets(character_name, character_description):
     uncut_dir = char_dir / 'uncut_images'
     char_dir.mkdir(parents=True, exist_ok=True)
     uncut_dir.mkdir(parents=True, exist_ok=True)
-    pipeline_logger.log_info(f"  ✓ Created directory structure: {uncut_dir}")
+    pipeline_logger.log_info(f" Created directory structure: {uncut_dir}")
     
     # Read template files
     pipeline_logger.log_info("  → Loading template files...")
@@ -96,7 +96,7 @@ def handle_character_sheets(character_name, character_description):
         pipeline_logger.log_error("Failed to read emotion sheet template")
         return None
     
-    pipeline_logger.log_info("  ✓ All templates loaded successfully")
+    pipeline_logger.log_info(" All templates loaded successfully")
     
     # Prepare templates with character description
     char_prompt = char_template.replace('{Char_Description}', character_description)
@@ -112,7 +112,7 @@ def handle_character_sheets(character_name, character_description):
         pipeline_logger.log_error("Failed to load grid template images")
         return None
     
-    pipeline_logger.log_info("  ✓ Grid templates loaded successfully")
+    pipeline_logger.log_info(" Grid templates loaded successfully")
     
     try:
         # Generate Character Sheet
@@ -120,7 +120,7 @@ def handle_character_sheets(character_name, character_description):
         pipeline_logger.log_api_call("OpenAI", "Character Sheet Generation", "start")
         
         char_response = client.responses.create(
-            model="gpt-4.1",
+            model="gpt-4o",
             input=[
                 {
                     "role": "user",
@@ -159,7 +159,7 @@ def handle_character_sheets(character_name, character_description):
         pipeline_logger.log_api_call("OpenAI", "Action Sheet Generation", "start")
         
         action_response = client.responses.create(
-            model="gpt-4.1",
+            model="gpt-4o",
             previous_response_id=char_response.id,
             input=[
                 {
@@ -199,8 +199,8 @@ def handle_character_sheets(character_name, character_description):
         pipeline_logger.log_api_call("OpenAI", "Emotion Sheet Generation", "start")
         
         emotion_response = client.responses.create(
-            model="gpt-4.1",
-            previous_response_id=char_response.id,
+            model="gpt-4o",
+            previous_response_id=action_response.id,
             input=[
                 {
                     "role": "user",
@@ -234,7 +234,7 @@ def handle_character_sheets(character_name, character_description):
             pipeline_logger.log_file_operation("Saving Emotion Sheet", str(emotion_image_path), "error")
             return None
         
-        pipeline_logger.log_info("  ✓ All character sheets generated successfully!")
+        pipeline_logger.log_info(" All character sheets generated successfully!")
         return uncut_dir
         
     except Exception as e:
