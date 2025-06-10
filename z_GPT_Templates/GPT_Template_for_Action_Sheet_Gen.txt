@@ -1,4 +1,40 @@
-Now make me an action sheet for this character, showing 6 different actions they can do.
-Please draw directly on top of the attached 3:2 template, which is divided into 6 equal sections (3 columns × 2 rows).
-Each section should show the character performing a unique action. Keep the drawings framed inside each box, and maintain the same style and proportions as in the character sheet.
-Please return a landscape 3:2 aspect ratio image as output
+Create an action sheet showing this character performing 6 different activities appropriate to their nature:
+
+CHARACTER: [Same as previously shown]
+
+CRITICAL GRID REQUIREMENTS:
+- You are provided with a template showing a 3×2 grid (3 columns, 2 rows = 6 cells total)
+- Each cell is a separate, isolated illustration area with visible boundaries
+- DO NOT let any character parts or action effects extend beyond cell boundaries
+- Treat each cell as its own mini-canvas with clear margins around the action
+
+REQUIRED ACTION CATEGORIES (in order, left to right, top to bottom):
+Cell 1: MOVEMENT - How this character travels (run/fly/swim/slither/float/roll)
+Cell 2: ATHLETIC - This character's version of jumping or dynamic movement
+Cell 3: INTERACTION - Character using a tool/object/ability unique to them
+Cell 4: EXPRESSION - Character celebrating or showing joy in their own way
+Cell 5: RESTING - Character in their natural calm or resting position
+Cell 6: COMMUNICATION - Character greeting or signaling in character-appropriate way
+
+IMPORTANT: Choose specific actions that make sense for THIS character's:
+- Physical form (legs/wings/fins/wheels/etc.)
+- Abilities (magic/strength/technology/etc.)
+- Personality and nature
+- Size and proportions
+
+STYLE SPECIFICATIONS:
+- Maintain exact same children's storybook illustration style from character sheet
+- Use identical color palette and character design
+- Add simple motion lines or effects where appropriate (within cell bounds)
+- Keep backgrounds minimal - just hints of ground/context
+- Clear, bold outlines consistent with previous sheet
+- Actions should feel natural and authentic to THIS character's nature
+
+CONSISTENCY RULES:
+- Character size must match the scale used in the character sheet
+- Maintain all design details (clothing, colors, features) exactly
+- Center each action within its respective cell
+- Leave breathing room (at least 10% margin) around character in each cell
+- Show full body in each action (no cropping)
+
+OUTPUT: A single landscape image (3:2 ratio) containing all 6 character actions arranged in the grid format shown in the template.

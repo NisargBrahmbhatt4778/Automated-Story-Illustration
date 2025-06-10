@@ -1,13 +1,47 @@
-Now create an emotion sheet for the character we've been working with.
+Create an emotion sheet showing this character expressing 9 different emotions:
 
-You will receive a 1:1 aspect ratio (1024×1024 px) grid image, divided into 9 equal squares (arranged in 3 columns and 3 rows).
+CHARACTER: [Same as previously shown in character and action sheets]
 
-Your task is to draw directly on top of this image, placing the character in each square and illustrating 9 distinct emotions.
+⚠️ CRITICAL FRAMING: Show the ENTIRE head plus neck and shoulders with generous margins around the character in each square. Do not zoom in too close.
 
-Please return a square 1:1 aspect ratio image as output
+CRITICAL GRID REQUIREMENTS:
+- You are provided with a template showing a 3×3 grid (9 equal squares total)
+- Each square is a separate, isolated illustration area with visible boundaries
+- DO NOT let any character parts extend beyond square boundaries
+- ZOOM OUT to show full head, neck, and upper shoulders in each square
+- Character's full head (including hair/hat/accessories) must be completely visible
+- Maintain EXACT SAME zoom level and framing in all 9 squares
 
-Please follow these instructions:
- - Each square should show a different facial expression or emotional state (e.g., happy, sad, angry, scared, excited, calm, surprised, tired, confused).
- - Draw within the boundaries of each square, keeping each emotion framed clearly.
- - Maintain consistent proportions and style with the previous character and action sheets.
- - If needed, slightly zoom out to ensure the character fits entirely within each square without overlapping into neighbouring sections.
+REQUIRED EMOTIONS (in order, left to right, top to bottom):
+Cell 1 (Top Left): HAPPY - HUGE smile, joyful squinted eyes
+Cell 2 (Top Center): SAD - Extreme frown, visible tears, droopy features
+Cell 3 (Top Right): ANGRY - Deep scowl, furrowed brow, clenched teeth
+Cell 4 (Middle Left): SURPRISED - Eyes wide as saucers, mouth in big O
+Cell 5 (Middle Center): SCARED - Tiny pupils, trembling, mouth agape
+Cell 6 (Middle Right): EXCITED - Massive grin, sparkly eyes, energetic
+Cell 7 (Bottom Left): TIRED - Heavy eyelids, huge yawn, slumped
+Cell 8 (Bottom Center): CONFUSED - Head tilt, one eyebrow up, puzzled
+Cell 9 (Bottom Right): CALM - Peaceful smile, relaxed, serene
+
+ALL emotions must be shown from the SAME viewing angle (front or 3/4 view).
+
+STYLE SPECIFICATIONS:
+- Maintain exact same children's storybook illustration style
+- Use identical color palette and character design details
+- EXAGGERATE expressions for clear emotional communication
+- Show complete head plus neck and shoulders in EVERY square
+- Frame character at MEDIUM DISTANCE - not close-up
+- Simple backgrounds - can use subtle color variations per emotion
+- Clear, bold outlines consistent with previous sheets
+- Character should appear as if standing/sitting at same distance in all squares
+
+CONSISTENCY RULES:
+- Character features must match previous sheets exactly
+- CRITICAL: Use same camera distance for all 9 squares (medium shot)
+- Character's head should fill only 40-50% of square height
+- Ensure 20-30% margin around character in every square
+- All characters must face forward or slight 3/4 view (same angle)
+- No cropping - show complete head including hair/accessories
+- Imagine character is sitting for 9 portrait photos from same position
+
+OUTPUT: A single square image (1:1 ratio) containing all 9 character emotions arranged in the 3×3 grid format shown in the template.

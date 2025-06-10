@@ -1,13 +1,32 @@
-Please generate a character sheet illustration based on the following character description:
+Create a character reference sheet following these EXACT specifications:
 
-{Char_Description}
+CHARACTER: {Char_Description}
 
-This image must be styled as a children’s storybook illustration.
-You will receive a blank template image (3:2 aspect ratio) that is divided into 6 equal rectangular sections, arranged in 3 columns and 2 rows.
-Your task is to draw directly on top of this template, ensuring that each of the 6 segments is individually filled with a unique illustration of the character.
-Use the 6 sections to show distinct poses or outfits to convey the character’s personality or design variations.
-Please return a landscape 3:2 aspect ratio image as output
-Make sure:
- - You draw inside the boundaries of each section, not across them.
- - The character proportions stay consistent between sections.
- - The drawing remains centred and well-framed within each segment.
+CRITICAL GRID REQUIREMENTS:
+- You are provided with a template showing a 3×2 grid (3 columns, 2 rows = 6 cells total)
+- Each cell is a separate, isolated illustration area with visible boundaries
+- DO NOT let any character parts extend beyond cell boundaries
+- Treat each cell as its own mini-canvas with clear margins around the character
+
+REQUIRED POSES (in order, left to right, top to bottom):
+Cell 1 (Top Left): Front view - character standing straight, arms at sides
+Cell 2 (Top Middle): 3/4 view - character turned 45 degrees, one hand on hip  
+Cell 3 (Top Right): Side profile - full left or right side view
+Cell 4 (Bottom Left): Back view - showing character from behind
+Cell 5 (Bottom Middle): Sitting pose - character seated naturally
+Cell 6 (Bottom Right): Action pose - character in motion (running, jumping, or gesturing)
+
+STYLE SPECIFICATIONS:
+- Children's storybook illustration style with soft, rounded edges
+- Consistent color palette across all 6 cells
+- Simple, clean backgrounds (can be different subtle colors per cell)
+- Clear, bold outlines to define the character
+- Maintain exact same character height relative to cell size in all panels
+
+CONSISTENCY RULES:
+- Character must be the EXACT same size in each cell (adjust pose, not scale)
+- Keep all clothing, colors, and design details identical across cells
+- Center each character within their respective cell
+- Leave breathing room (at least 10% margin) around character in each cell
+
+OUTPUT: A single landscape image (3:2 ratio) containing all 6 character poses arranged in the grid format shown in the template.
