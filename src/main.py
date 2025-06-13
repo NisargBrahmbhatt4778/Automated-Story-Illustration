@@ -26,6 +26,9 @@ from model_trainer import train_sdxl_model
 from image_generator import generate_images_loop
 from pipeline_logger import init_pipeline_logger, get_pipeline_logger, cleanup_pipeline_logger
 import replicate
+import json
+from pathlib import Path
+from datetime import datetime
 
 # Step 1 - Get Character Name + Description
 def get_character_info():
@@ -48,6 +51,42 @@ def get_character_info():
         character_description = input("Enter character description: ").strip()
     
     return character_name, character_description
+
+def save_character_info(character_name, character_description):
+    """
+    Save character name and description to a JSON file in the character's directory.
+    
+    Args:
+        character_name (str): Name of the character
+        character_description (str): Description of the character
+        
+    Returns:
+        Path: Path to the saved JSON file or None if failed
+    """
+    try:
+        # Create character directory if it doesn't exist
+        char_dir = Path('Characters') / character_name
+        char_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Create character info data
+        character_info = {
+            "character_name": character_name,
+            "character_description": character_description,
+            "created_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
+        
+        # Save to JSON file
+        json_path = char_dir / "character_info.json"
+        with open(json_path, 'w', encoding='utf-8') as f:
+            json.dump(character_info, f, indent=2, ensure_ascii=False)
+        
+        print(f"✓ Character information saved to: {json_path}")
+        return json_path
+        
+    except Exception as e:
+        print(f"✗ Error saving character information: {str(e)}")
+        return None
 
 def upscale_and_process_images(character_name, uncut_dir):
     """
@@ -134,6 +173,13 @@ def generate_new_image(model_id, character_name):
 if __name__ == "__main__":
     # Step 1: Get character information
     character_name, character_description = get_character_info()
+    
+    # Step 1a: Save character information to JSON
+    print("\n=== Saving Character Information ===")
+    json_path = save_character_info(character_name, character_description)
+    if not json_path:
+        print("Failed to save character information. Exiting...")
+        exit(1)
     
     # Initialize pipeline logger
     pipeline_logger = init_pipeline_logger(character_name)
