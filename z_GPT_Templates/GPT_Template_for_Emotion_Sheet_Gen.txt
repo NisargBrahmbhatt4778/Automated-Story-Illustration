@@ -44,4 +44,6 @@ CONSISTENCY RULES:
 - No cropping - show complete head including hair/accessories
 - Imagine character is sitting for 9 portrait photos from same position
 
+IMPORTANT: Generate a text-free image only - no words, letters, labels, or captions anywhere.
+
 OUTPUT: A single square image (1:1 ratio) containing all 9 character emotions arranged in the 3×3 grid format shown in the template.

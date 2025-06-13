@@ -37,4 +37,6 @@ CONSISTENCY RULES:
 - Leave breathing room (at least 10% margin) around character in each cell
 - Show full body in each action (no cropping)
 
+IMPORTANT: Generate a text-free image only - no words, letters, labels, or captions anywhere.
+
 OUTPUT: A single landscape image (3:2 ratio) containing all 6 character actions arranged in the grid format shown in the template.

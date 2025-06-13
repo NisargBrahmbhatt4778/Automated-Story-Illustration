@@ -29,4 +29,6 @@ CONSISTENCY RULES:
 - Center each character within their respective cell
 - Leave breathing room (at least 10% margin) around character in each cell
 
+IMPORTANT: Generate a text-free image only - no words, letters, labels, or captions anywhere.
+
 OUTPUT: A single landscape image (3:2 ratio) containing all 6 character poses arranged in the grid format shown in the template.
